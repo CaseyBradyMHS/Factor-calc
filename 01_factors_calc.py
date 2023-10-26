@@ -59,9 +59,14 @@ def get_factors(factor_variable):
 
     factor_list = []
 
+    for item in range(1, var_to_factor + 1):
+        remainder = var_to_factor % item
+
+        if remainder == 0:
+            factor_list.append(item)
 
     factor_list.sort()
-
+    return factor_list
 
 # main routine
 
