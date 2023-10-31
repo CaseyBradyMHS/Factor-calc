@@ -18,8 +18,9 @@ def statement_generator(text, decoration):
 def instructions():
     statement_generator("Instructions / information", "=")
     print('''
-This program finds all factors of the number you enter. Simply enter a number
-and the program will fnd the factors.
+This program assumes that images are being represented    
+in 24 bit colour (ie: 24 bits per pixel). for text, we assume   
+that ascii encoding is being used (8 bits per character).
 
 Complete as many calculations as necessary, pressing <enter>
 at the end of each calculation or any key to quit. 
@@ -61,14 +62,14 @@ def get_factors(factor_variable):
     for item in range(1, var_to_factor + 1):
         remainder = var_to_factor % item
 
-
         if remainder == 0:
-            factor_list.append(item)
+            factor_list.append(var_to_factor)
 
     factor_list.sort()
-    return factor_list
+
 
 # main routine
+
 
 # heading
 statement_generator("Factors Calculator", "-")
