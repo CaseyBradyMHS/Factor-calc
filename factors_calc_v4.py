@@ -38,7 +38,7 @@ def num_check(question, low, high):
             # ask for a number
             response = int(input(question))
 
-            # check number is more than / equal to lowest number allowed
+            # check number is more than / equal to the lowest number allowed
             if response >= low:
                 if response < high:
                     return response
@@ -60,11 +60,19 @@ def num_check(question, low, high):
 def get_factors(var_to_factor):
     var_factor_list = []
 
-    for item in range(1, var_to_factor + 1):
+    # find the square root (half way) and make it into an integer
+    stop = int(var_to_factor ** 0.5)
+
+    for item in range(1, stop + 1):
         remainder = var_to_factor % item
 
         if remainder == 0:
             var_factor_list.append(item)
+
+            # calculate second factor and add it to the list
+            factor_2 = var_to_factor // item
+            if factor_2 != var_to_factor ** 0.5:
+                var_factor_list.append(factor_2)
 
     var_factor_list.sort()
     return var_factor_list
